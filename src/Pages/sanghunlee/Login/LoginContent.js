@@ -1,7 +1,6 @@
 import React from'react';
 import {withRouter, Link} from 'react-router-dom';
 
-
 class LoginContent extends React.Component{
     constructor(props){
         super(props)
@@ -12,59 +11,48 @@ class LoginContent extends React.Component{
             button: 'button',
             disabled: true,
         }
-
     }
 
-    updateId =(evt)=>{
-        this.setState({id : evt.target.value})
-        if(this.state.id.length >=5 && this.state.pw.length>=5 && this.state.id.includes("@")){
-            this.setState({disabled : false});
-        }
-        else{
-            this.setState({disabled : true});
-        }
+    updateId =(e)=>{
+        const isIdValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@");
+        this.setState({
+            id: e.target.value,
+            disabled: !isIdValid
+        })
+
     }
     
     updatePw =(e)=>{
-        this.setState({pw:e.target.value})
-        if(this.state.id.length >=5 && this.state.pw.length>=5 && this.state.id.includes("@")){
-            this.setState({disabled : false});
-        }
-        else{
-            this.setState({disabled: true});
-        }
+        const isPwValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@");
+        this.setState({
+            pw: e.target.value,
+            disabled: !isPwValid
+        })
     }
 
-
-    // LoginButton = (evt)=>{
-    //     console.log(this.state.id)
-    //     console.log(this.state.pw)
-    // }
-
-
     render(){
-        return(<article>
-            <div className="login">
-                <div className="loginContentWrapper">
-                    <img alt ='' className="instaLogo" src="../images/sanghunlee/logo_text.png" />
+        return(
+        <div className ="LoginContent">
+                <div className="loginInputBox">
+                    <img alt ='logoImage' className="instaLogo" src="../images/sanghunlee/logo_text.png" />
                     <input
-                    value ={this.state.id} 
-                    onChange ={this.updateId} 
-                    className="inputId" 
-                    type="text" 
-                    placeholder="Phone number, username, or email"/>
-
+                        value ={this.state.id} 
+                        type="text" 
+                        placeholder="Phone number, username, or email"
+                        onChange ={this.updateId} 
+                    />
                     <input 
-                    value = {this.state.pw}
-                    onChange ={this.updatePw} 
-                    className="inputPw" type="text" 
-                    placeholder="Password"/>
-
+                        value = {this.state.pw}
+                        type="text" 
+                        placeholder="Password"
+                        onChange ={this.updatePw} 
+                    />
                     <button 
-                    onClick = {this.LoginButton} 
-                    to='/' 
-                    className="loginBtn"
-                    disabled={this.state.disabled}>Log In
+                        className="loginBtn"
+                        onClick = {this.LoginButton} 
+                        disabled={this.state.disabled}
+                    >
+                        Log In
                     </button>
                     <div className="or">
                         <div className="slashLine"></div>
@@ -73,7 +61,7 @@ class LoginContent extends React.Component{
                     </div>
                     <div className="withFacebook">
                         <div>
-                            <img alt ='' className="facebookLogo" src="../images/fblogo.png"/>
+                            <img alt ='facebookLogo' src="../images/sanghunlee/fblogo.png"/>
                             <span>
                                 Log in with Face book
                             </span>
@@ -81,20 +69,19 @@ class LoginContent extends React.Component{
                         <a href="https://facebook.com">Forgot password?</a>
                     </div>
                 </div>
-            </div>
             <div className="SignUpBox">
                 <span>Don't have an account?
                 </span>
-                &nbsp;<a href="https://facebook.com">Sign Up</a>
+                <a href="https://facebook.com">Sign Up</a>
             </div>
             <div className="getApp">
                 <div>Get the app</div>
                 <div className="appLogo">
-                    <img alt = '' src="../images/applelogo.png"/>
-                    <img alt = '' src="../images/googlelogo.png"/>
+                    <img alt = 'appleStoreLogo' src="../images/sanghunlee/applelogo.png"/>
+                    <img alt = 'GoogleStoreLogo' src="../images/sanghunlee/googlelogo.png"/>
                 </div>
             </div>
-    </article>
+        </div>
         );
     }
 }

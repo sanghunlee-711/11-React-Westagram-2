@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Nav extends React.Component{
+class LoginNav extends React.Component{
     render(){
         return (
-        <div>
+        <div className= "LoginNav">
             <nav>
                 <ul>
                     <li>ABOUT</li>
@@ -29,4 +29,4 @@ class Nav extends React.Component{
     }
 }
 
-export default Nav;
+export default LoginNav;

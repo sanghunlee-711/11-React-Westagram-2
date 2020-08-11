@@ -1,26 +1,23 @@
 import React from 'react';
 import LoginContent from './LoginContent'
-import Nav from './Nav'
-
+import LoginNav from './LoginNav'
 import './Login.scss';
-
-
-
-
+import './LoginContent.scss'
+import './LoginNav.scss'
 
 class Login extends React.Component {
     render(){
         return (
-        <div className ="LoginsassWrapper">     
-            <div className="mainContentWrapper">
-                    <section>
-                        <img alt = ""className="MainImage" src="../images/sanghunlee/leftiamge.png" />
-                    <LoginContent />
-                    </section>
-                    <Nav />
+            <div className ="Login">     
+                <section className="mainContentWrapper">
+                        <div className = "LoginContentwrapper">
+                            <img className="MainImage" alt = "phonePicture" src="../images/sanghunlee/leftiamge.png" />
+                        <LoginContent />
+                        </div>
+                        <LoginNav />
+                </section>
             </div>
-        </div>
-        )
+            )
     }
 }
 
