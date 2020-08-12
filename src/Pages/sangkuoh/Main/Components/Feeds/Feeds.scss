@@ -11,6 +11,8 @@
     a {
         display: block;
         text-decoration: none;
+        color: black;
+        font-weight: 600;
     }
     
     .mainContainer{
@@ -18,7 +20,7 @@
         flex-direction: column;
         align-items: flex-end;
         max-width: 935px;
-        width: 935px;
+        width: 100%;
         height: 100%;
         margin-top: 54px;
         padding-top: 30px;
@@ -84,7 +86,7 @@
     }
     
     .contentMainContainer{
-        width: 614px;
+        width: 100%;
         padding-top: 0px;
         margin-bottom: 60px;
         border: 1px solid rgb(219, 219, 219);
@@ -380,6 +382,7 @@
         border: 0;
         outline: none;
         font-size: 1.2rem;
+        font-weight: 600;
         cursor: pointer;
         color: #0095f6;
         background-color: rgb(250, 250, 250);
@@ -434,9 +437,13 @@
     }
 
     .userReply {
+        width: 400px;
         margin: 0;
         margin-left: 3px;
         font-size: 1.4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     
     #userReplyBtn {
@@ -446,5 +453,25 @@
         background: none;
         outline: none;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 935px) {
+        .mainRight{
+            display: none;
+            margin: 0 auto;
+        }
+        .feeds{
+            margin: 0 auto;
+        }
+        .mainContainer{
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .mainContainer{
+            padding-top: 0;
+        }
     }
 }

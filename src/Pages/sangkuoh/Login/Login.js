@@ -25,13 +25,28 @@ class Login extends Component {
         })
     }
 
+    SignIn = () => {
+        fetch("http://10.58.4.79:8000/users/sign-in", {
+            method: "POST",
+            body: JSON.stringify({
+                email: this.state.userID,
+                password: this.state.userPassword
+            })
+        }).then(res => res.json())
+        .then(res => console.log(res))
+    }
+
+
     goToMain =() => {
         this.props.history.push('/sangkuohMain');
     }
 
     pressEnter = e => {
         if(e.key === "Enter") {
-            this.goToMain();
+            if(this.state.userPassword.length >= 5 && this.state.userID.includes("@") && this.state.userPassword.length >= 5){
+                this.SignIn();
+                this.goToMain();
+            }
         }
     }
     
