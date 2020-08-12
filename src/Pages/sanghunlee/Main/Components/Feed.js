@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Reply from'./Reply';
 
-let mockdata = [{id:1 , username: 'Gareth', comment:'Hello'}, {id:2 , username: 'Lio', comment:'Ohla'}]
-
 class Feed extends Component {
     constructor(props){
       super(props)
       this.state = {
-        id: 3,
+        id: require('./Mockdata/mockData.json').length+1,
         input : '',
-        comments: mockdata,
+        comments: require('./Mockdata/mockData.json'),
         plusComment: '',
       }
     }
@@ -22,10 +20,11 @@ class Feed extends Component {
     
 
     addComment = (e) => {
-      this.setState({id: this.state.id+1})
-      this.setState({input:''})
-      this.setState({comments: this.state.comments.concat({id: this.state.id, username:'Sanghun', comment: this.state.input}) })
-      console.log(this.state.comments)
+      this.setState({
+        id: this.state.id+1,
+        comments: [...this.state.comments, {id: this.state.id, username: 'Sanghun', comment: this.state.input}],
+        input: ''
+      })
     }
 
     enterKey = (e)=>{
@@ -41,22 +40,29 @@ class Feed extends Component {
     }
     
     render() {
+      console.log(this.state.comments)
+
         return (
-                <section className="feed">
+                <section className="Feed">
                   <header>
                     <div className="feedHeaderName">
-                      <img alt="Posting Name"
-                        src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/97136862_702839713802578_7837045271895736320_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=RKEStn8EIRIAX_DAFmT&oh=efad139222216e0b4d279e78bbfa753e&oe=5F4A15B9"/>
+                      <img 
+                        alt="Posting Name"
+                        src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/97136862_702839713802578_7837045271895736320_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=RKEStn8EIRIAX_DAFmT&oh=efad139222216e0b4d279e78bbfa753e&oe=5F4A15B9"
+                      />
                       <p>garethbale11</p>
                     </div>
                     <div className="feedHeaderbutton">
-                      <div className="circle"></div>
-                      <div className="circle"></div>
-                      <div className="circle"></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
                     </div>
                   </header>
                   <div className="feedContentImg">
-                    <img alt="Posting Picture" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/109471108_2739580409619744_6586617576396670755_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=DV5jqtiVlmUAX-fhVlc&oh=e250ac900db6a8d80db62c538c0c6ea6&oe=5F4C0287"/>
+                    <img 
+                      alt="Posting" 
+                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/109471108_2739580409619744_6586617576396670755_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=DV5jqtiVlmUAX-fhVlc&oh=e250ac900db6a8d80db62c538c0c6ea6&oe=5F4C0287"
+                    />
                   </div>
                   <section className="feedButtons">
                     <div className="feedButtonsWrapper">
@@ -69,21 +75,32 @@ class Feed extends Component {
                         </svg>
                       </span>
                       <span className="feedButton">
-                        <img alt="CommentButton"
-                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"/>
+                        <img 
+                          alt="CommentButton"
+                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"
+                        />
                       </span>
                       <span className="feedButton">
-                        <img alt="ShareButton" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"/>
+                        <img 
+                          alt="ShareButton" 
+                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"
+                        />
                       </span>
                     </div>
                     <span className="feedButton">
-                      <img alt="SaveButton" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"/>
+                      <img
+                        alt="SaveButton" 
+                        src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"
+                      />
                     </span>
                   </section>
                   <div className="feedBottomWrapper">
                     <div className="feedBottom">
                       <div className="feedBottomlikeNumber">
-                        <img alt="SomeoneClicklike" src="../images/sanghunlee/wecode.jpeg"/>
+                        <img
+                          alt="SomeoneClicklike" 
+                          src="../images/sanghunlee/wecode.jpeg"
+                        />
                         <span className="likeNumber">121</span><span>likes</span>
                       </div>
                       <ul className="plusCommentWrapper">
@@ -116,7 +133,7 @@ class Feed extends Component {
                     type="text" 
                     placeholder="Add a comment...">
                     </textarea>
-                      <button onClick = {() => this.addComment()} type="submit" className="commentSubmitButton">
+                      <button onClick = {this.addComment} type="submit" className="commentSubmitButton">
                         Post
                       </button>
                     </section>

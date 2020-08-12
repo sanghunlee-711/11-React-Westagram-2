@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './Story'
-import './Feed'
-import './Aside'
 import Nav from '../../../Components/Nav/Nav'
-import Story from './Story'
-import Feed from './Feed';
-import Aside from './Aside';
+import Story from './Components/Story'
+import Feed from './Components/Feed';
+import Aside from './Components/Aside';
 import './Main.scss'
+import './Components/Feed.scss'
+import './Components/Reply.scss'
+import './Components/Story.scss'
+import './Components/Aside.scss'
 
 class Main extends Component {
     render() {
@@ -23,7 +24,6 @@ class Main extends Component {
               <Aside />
             </section>
         </main>
-
         );
     }
 }

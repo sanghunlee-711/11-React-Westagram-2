@@ -10,11 +10,26 @@ class LoginContent extends React.Component{
             pw: '',
             button: 'button',
             disabled: true,
+            token: ''
         }
     }
 
+    LoginButton =()=>{
+
+        fetch("http://10.58.0.127:8000/user/login", {
+            method: "POST",
+            body: JSON.stringify({
+                email : this.state.id,
+                password : this.state.pw
+            })
+        })
+        .then(res => res.json()) 
+        .then(res => console.log(res))
+    };
+
     updateId =(e)=>{
-        const isIdValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@");
+        const isIdValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@")
+        ;
         this.setState({
             id: e.target.value,
             disabled: !isIdValid
@@ -23,18 +38,25 @@ class LoginContent extends React.Component{
     }
     
     updatePw =(e)=>{
-        const isPwValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@");
+        const isPwValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@")
+        ;
         this.setState({
             pw: e.target.value,
             disabled: !isPwValid
         })
+
     }
 
     render(){
+
         return(
         <div className ="LoginContent">
                 <div className="loginInputBox">
-                    <img alt ='logoImage' className="instaLogo" src="../images/sanghunlee/logo_text.png" />
+                    <img 
+                        className="instaLogo" 
+                        alt ='logoImage' 
+                        src="../images/sanghunlee/logo_text.png" 
+                    />
                     <input
                         value ={this.state.id} 
                         type="text" 
@@ -77,8 +99,14 @@ class LoginContent extends React.Component{
             <div className="getApp">
                 <div>Get the app</div>
                 <div className="appLogo">
-                    <img alt = 'appleStoreLogo' src="../images/sanghunlee/applelogo.png"/>
-                    <img alt = 'GoogleStoreLogo' src="../images/sanghunlee/googlelogo.png"/>
+                    <img 
+                        alt = 'appleStoreLogo' 
+                        src="../images/sanghunlee/applelogo.png"
+                    />
+                    <img 
+                        alt = 'GoogleStoreLogo' 
+                        src="../images/sanghunlee/googlelogo.png"
+                    />
                 </div>
             </div>
         </div>

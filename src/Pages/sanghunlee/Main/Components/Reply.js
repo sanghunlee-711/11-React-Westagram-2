@@ -6,7 +6,7 @@ class Reply extends React.Component{
         return(
             this.props.comments.map((comment) => (
                 <li key = {comment.id}>
-                    <div class="plusTypedComment">
+                    <div class="Reply">
                         <div><span>{comment.username}</span><span className="plusFeedComment">{comment.comment}</span></div>
                         <div>
                             <div className="likeDeleteButton">

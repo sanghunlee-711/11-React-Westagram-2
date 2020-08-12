@@ -1,0 +1,155 @@
+.Feed {
+        width: 600px;
+        margin: 25px 10px 30px 10px;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        background-color: #FFFFFF;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            padding: 10px 10px 0px 10px;
+        }
+
+        &:nth-child(1){
+            margin-top: 30px;
+        }
+        .feedButtons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 40px;
+            background-color: #FFFFFF;
+        }
+    
+    
+        .feedHeaderName {
+            display: flex;
+    
+            p {
+                margin: 10px 0px 0px 10px;
+            }
+    
+            img {
+                width: 40px;
+                height: 40px;
+                border: 0px solid;
+                border-radius: 100%;
+            }
+
+        }
+    
+        .feedHeaderbutton {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 16px;
+            height: 30px;
+            margin-top: 5px;
+
+            div {
+                width: 3px;
+                height: 3px;
+                padding: 1px;
+                border: 0px solid black;
+                border-radius: 100%;
+                opacity: 70%;
+                background-color: black;
+            }
+        }
+    
+        .feedContentImg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feedAddedComment {
+            margin-left: 20px;
+            word-break: break-word;
+        }
+    
+        .feedComment {
+            padding: 5px 10px;
+            word-wrap: break-word;
+        }
+    
+        .feedPostingTime {
+            margin-left: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            color: #dbdbdb;
+        }
+
+        .feedButtonsWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .feedButton {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        
+        .feedBottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #FFFFFF;
+        }
+    
+        .feedBottomlikeNumber {
+            padding: 0px 10px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                border: 0;
+                padding: 1px;
+            }
+        }
+
+        .feedCommentInput {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0px 10px;
+            border-top: 1px solid #dbdbdb;
+
+            button {
+                background: none;
+                border: 0;
+                outline: 0;
+                opacity: 30%;
+                color: #0095f6;
+            }
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                padding-top: 15px;
+                border: none;
+                outline: 0;
+                overflow-y: auto;
+                resize: none;
+                font-size: 15px;
+            } 
+        }
+        .plusCommentWrapper {
+            margin: 0;
+            padding: 0;
+
+            li {
+                font-size: 15px;
+            }
+        }
+}
