@@ -1,16 +1,12 @@
-.Login{
-    height: 100%;
+.Login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 935px;
+    height: 100vh;
     background-color: #FAFAFA;
     box-sizing: border-box;
-
-    .mainContentWrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        min-width: 935px;
-        height: 100vh;
 
         .LoginContentwrapper {
             display: flex;
@@ -20,7 +16,10 @@
         .MainImage {
             width: 400px;
             height: 580px;
+
+            @media screen and(max-width: 1000px) {
+                display: none;
+            }
         }
         
-    }
 }
