@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import "../../../../src/Styles/common.scss";
 import "./Login.scss";
 
-
 class Login extends Component {
     constructor() {
         super();
@@ -13,44 +12,34 @@ class Login extends Component {
         }
     }
 
-    idChangeHandler = e => {
+    changeHandler = e => {
         this.setState({
-            userID: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    passwordChangeHandler = e => {
-        this.setState({
-            userPassword: e.target.value
-        })
-    }
-
-    SignIn = () => {
+    handleSignIn = () => {
+        const { userID, userPassword } = this.state
         fetch("http://10.58.4.79:8000/users/sign-in", {
             method: "POST",
             body: JSON.stringify({
-                email: this.state.userID,
-                password: this.state.userPassword
+                email: userID,
+                password: userPassword
             })
         }).then(res => res.json())
-        .then(res => console.log(res))
+        .then(this.props.history.push('/sangkuohMain'))
     }
 
-
-    goToMain =() => {
-        this.props.history.push('/sangkuohMain');
-    }
-
-    pressEnter = e => {
-        if(e.key === "Enter") {
-            if(this.state.userPassword.length >= 5 && this.state.userID.includes("@") && this.state.userPassword.length >= 5){
-                this.SignIn();
-                this.goToMain();
-            }
+    logIn = ({key}) => {
+        const { userID,userPassword } = this.state;
+        if(key && key !== "Enter") return;
+        if(userID.includes("@") && userPassword.length >= 5 && userPassword.length >= 5){
+            this.handleSignIn();
         }
     }
     
     render() {
+        const { userID, userPassword } = this.state;
         return (
             <div className="Login">
                 <main>
@@ -64,14 +53,14 @@ class Login extends Component {
                         <div className="loginFormWrap">
                         <div className="loginForm">
                             <div className="loginFormInput" id="inputFormTop">
-                            <input className="inputText inputId" onChange={this.idChangeHandler} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
+                            <input className="inputText inputId" name="userID" onChange={this.changeHandler} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
                             </div>
                             <div className="loginFormInput">
-                            <input className="inputText inputPw" onChange={this.passwordChangeHandler} onKeyPress={this.pressEnter} type="password" placeholder="비밀번호" />
+                            <input className="inputText inputPw" name="userPassword" onChange={this.changeHandler} onKeyPress={this.logIn} type="password" placeholder="비밀번호" />
                             </div>
-                            <button className={`btn ${this.state.userID.includes("@") && this.state.userPassword.length >= 5 ? "active" : "off"}`}
-                                disabled={this.state.userID.includes("@") && this.state.userPassword.length >= 5 ? false : true}
-                                onClick={this.goToMain}>
+                            <button className={`btn ${userID.includes("@") && userPassword.length >= 5 ? "active" : "off"}`}
+                                disabled={userID.includes("@") && userPassword.length >= 5 ? false : true}
+                                onClick={this.logIn}>
                                     로그인
                             </button>
                             <div className="loginBoxOr">

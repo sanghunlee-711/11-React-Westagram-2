@@ -20,7 +20,10 @@ class Reply extends Component {
         <div className="userReplyContainer">
             <button className = "userId">{this.props.userId}</button>
             <span className = "userReply">{this.props.newReply}</span>
-            {this.state.like ? <HeartLike onClick={this.changeLike}/> : <NormalLike onClick={this.changeLike}/>}  
+            {this.state.like
+              ? <HeartLike onClick={this.changeLike}/>
+              : <NormalLike onClick={this.changeLike}/>
+            }
         </div>
       );
   }

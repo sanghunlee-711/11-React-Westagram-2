@@ -1,10 +1,10 @@
-import { withRouter,Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
-import Live from '../Live/Live';
-import Reply from '../Feeds/ReplyLike/Reply';
+import Live from './Live/Live';
 import Like from '../Feeds/MainLike/Like';
+import Reply from './ReplyLike/Reply';
+import Aside from './Aside';
 import "./Feeds.scss";
-
 
 class Feeds extends Component {
     constructor(props){
@@ -15,7 +15,7 @@ class Feeds extends Component {
             replies: [],
         }
     }
-
+    
     textChange = e => {
         this.setState({
             newReply: e.target.value
@@ -29,13 +29,15 @@ class Feeds extends Component {
     }
 
     addReply = () => {
+        const { replies, newReply } = this.state;
         this.setState({        
-            replies: this.state.replies.concat(this.state.newReply),
+            replies: replies.concat(newReply),
             newReply: "",
         });
     }
 
     render() {
+        const { userId, newReply, replies } = this.state;
         return (
             <main className="Feeds">
                 <div className="mainContainer">
@@ -107,7 +109,7 @@ class Feeds extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="mainTextUserReply">
-                                                    {this.state.replies.map((reply, index) => (<Reply key={index} userId={this.state.userId} newReply={reply} />))}
+                                                    {replies.map((reply, index) => (<Reply key={index} userId={userId} newReply={reply} />))}
                                                 </div>
                                             </div>
                                         </div>
@@ -118,11 +120,11 @@ class Feeds extends Component {
                                             <input className="replyArea" id="replyArea" aria-label="댓글 달기..." placeholder="댓글 달기..." autoComplete="off" autoCorrect="off" 
                                                 onChange={this.textChange}
                                                 onKeyPress={this.pressEnter}
-                                                value={this.state.newReply}
+                                                value={newReply}
                                             ></input>
                                             <button
-                                                className={`replyBtnDiv replyBtn ${this.state.newReply ? "active" : "off"}`}
-                                                disabled={this.state.newReply.length >= 1 ? false : true}
+                                                className={`replyBtnDiv replyBtn ${newReply ? "active" : "off"}`}
+                                                disabled={newReply.length >= 1 ? false : true}
                                                 onClick={this.addReply}
                                                 type="submit"
                                                     >게시
@@ -133,139 +135,7 @@ class Feeds extends Component {
                             </div>
                         </article>
                     </div>
-                <div className="mainRight">
-                    <div className="mainRightProfileWrap">
-                        <div className="mainRightProfileContent"></div>
-                        <ul className="rightProfileNameWrap">
-                            <li className="rightProfileNameId">539_ku</li>
-                            <li className="rightProfileName">539</li>
-                        </ul>
-                    </div>
-                    <div className="rightSuggestion">
-                        <div className="suggestionHeader">
-                            <div className="suggestionHeaderRight suggestionHeaderFont">회원님을 위한 추천</div>
-                            <Link className="suggestionHeaderLink suggestionHeaderFont" to="/">모두 보기</Link>
-                        </div>
-                        <div className="suggestionMainWrap">
-                            <div className="suggestionMainContainer">
-                                <div className="suggestionMain">
-                                    <div className="suggestionMainProfile">
-                                            <Link className="suggestionMainImg" to="/">
-                                                <div className="sugMainImg"></div>
-                                            </Link>
-                                    </div>
-                                    <div className="sugName">
-                                        <a href="https://www.instagram.com/aimyon36/" className="sugNameText">
-                                            <div className="sugNameTextID">AIMYON</div>
-                                        </a>
-                                        <div className="sugNameTextH">회원님을 위한 추천</div>
-                                    </div>
-                                    <div className="sugNameBtn">
-                                        <button className="followBtn">팔로우</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="suggestionMainWrap">
-                            <div className="suggestionMainContainer">
-                                <div className="suggestionMain">
-                                    <div className="suggestionMainProfile">
-                                            <Link className="suggestionMainImg" to="/">
-                                                <div className="sugMainImg"></div>
-                                            </Link>
-                                    </div>
-                                    <div className="sugName">
-                                        <a href="https://www.instagram.com/aimyon36/" className="sugNameText">
-                                            <div className="sugNameTextID">AIMYON</div>
-                                        </a>
-                                        <div className="sugNameTextH">회원님을 위한 추천</div>
-                                    </div>
-                                    <div className="sugNameBtn">
-                                        <button className="followBtn">팔로우</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="suggestionMainWrap">
-                            <div className="suggestionMainContainer">
-                                <div className="suggestionMain">
-                                    <div className="suggestionMainProfile">
-                                            <Link className="suggestionMainImg" to="/">
-                                                <div className="sugMainImg"></div>
-                                            </Link>
-                                    </div>
-                                    <div className="sugName">
-                                        <a href="https://www.instagram.com/aimyon36/" className="sugNameText">
-                                            <div className="sugNameTextID">AIMYON</div>
-                                        </a>
-                                        <div className="sugNameTextH">회원님을 위한 추천</div>
-                                    </div>
-                                    <div className="sugNameBtn">
-                                        <button className="followBtn">팔로우</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="suggestionMainWrap">
-                            <div className="suggestionMainContainer">
-                                <div className="suggestionMain">
-                                    <div className="suggestionMainProfile">
-                                            <Link className="suggestionMainImg" to="/">
-                                                <div className="sugMainImg"></div>
-                                            </Link>
-                                    </div>
-                                    <div className="sugName">
-                                        <a href="https://www.instagram.com/aimyon36/" className="sugNameText">
-                                            <div className="sugNameTextID">AIMYON</div>
-                                        </a>
-                                        <div className="sugNameTextH">회원님을 위한 추천</div>
-                                    </div>
-                                    <div className="sugNameBtn">
-                                        <button className="followBtn">팔로우</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="suggestionMainWrap">
-                            <div className="suggestionMainContainer">
-                                <div className="suggestionMain">
-                                    <div className="suggestionMainProfile">
-                                            <Link className="suggestionMainImg" to="/">
-                                                <div className="sugMainImg"></div>
-                                            </Link>
-                                    </div>
-                                    <div className="sugName">
-                                        <a href="https://www.instagram.com/aimyon36/" className="sugNameText">
-                                            <div className="sugNameTextID">AIMYON</div>
-                                        </a>
-                                        <div className="sugNameTextH">회원님을 위한 추천</div>
-                                    </div>
-                                    <div className="sugNameBtn">
-                                        <button className="followBtn">팔로우</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rightFooter">
-                        <div className="rightNav">
-                            <ul className="rightNavItem">
-                                <li className="rightNavItemLi">소개</li>
-                                <li className="rightNavItemLi">도움말</li>
-                                <li className="rightNavItemLi">홍보 센터</li>
-                                <li className="rightNavItemLi">API</li>
-                                <li className="rightNavItemLi">채용 정보</li>
-                                <li className="rightNavItemLi">개인정보처리방침</li>
-                                <li className="rightNavItemLi">약관</li>
-                                <li className="rightNavItemLi">위치</li>
-                                <li className="rightNavItemLi">인기계정</li>
-                                <li className="rightNavItemLi">해시태그</li>
-                                <li className="rightNavItemLi">언어</li>
-                            </ul>
-                            <span className="rightNavItemLi">© 2020 INSTAGRAM FROM FACEBOOK</span>
-                        </div>
-                    </div>
-                </div>
+                <Aside />
                 </div>
             </main>
         );

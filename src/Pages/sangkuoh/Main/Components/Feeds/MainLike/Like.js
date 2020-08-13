@@ -17,7 +17,10 @@ class Like extends Component {
   render() {
     return (
       <div>
-        {this.state.like ? <MainHeartLike onClick={this.changeMainLike}/> : <MainNormalLike onClick={this.changeMainLike}/>}
+        {this.state.like
+          ? <MainHeartLike onClick={this.changeMainLike}/>
+          : <MainNormalLike onClick={this.changeMainLike}/>
+        }
       </div>
     );
   }

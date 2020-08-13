@@ -8,17 +8,12 @@ import '../../../Styles/common.scss';
 class Main extends Component {
     render() {
         return (
-        <div>
+        <>
             <Nav />
             <Feeds />
-        </div>
+        </>
         );
     }
 }
-
-
-
-
-
 
 export default withRouter(Main);
