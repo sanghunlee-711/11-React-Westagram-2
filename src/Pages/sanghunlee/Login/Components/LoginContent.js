@@ -6,8 +6,8 @@ class LoginContent extends React.Component{
         super(props)
 
         this.state ={
-            id: '',
-            pw: '',
+            username: '',
+            password: '',
             button: 'button',
             disabled: true,
             token: ''
@@ -18,8 +18,8 @@ class LoginContent extends React.Component{
         fetch("http://10.58.0.127:8000/user/login", {
             method: "POST",
             body: JSON.stringify({
-                email : this.state.id,
-                password : this.state.pw
+                email : this.state.username,
+                password : this.state.password
             })
         })
         .then(res => res.json()) 
@@ -28,48 +28,37 @@ class LoginContent extends React.Component{
         
         this.props.history.push("/sanghunleeMain")
     };
-
-    updateId =(e)=>{
-        const isIdValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@")
-        ;
-        this.setState({
-            id: e.target.value,
-            disabled: !isIdValid
-        })
-
-    }
     
-    updatePw =(e)=>{
-        const isPwValid = this.state.id.length >=5 && this.state.pw.length >=5 && this.state.id.includes("@")
-        ;
+    updateInput =({target: {name, value}})=>{
+        const isValid = this.state.username.length >=5 && this.state.password.length >=5 && this.state.username.includes("@");
         this.setState({
-            pw: e.target.value,
-            disabled: !isPwValid
+            [name]: value,
+            disabled: !isValid
         })
 
     }
     render(){
-        const {LoginButton, updateId, updatePw, state: {id : idInput, pw: pwInput, disabled}} = this;
+        const {LoginButton, updateInput, state: {username : usernameInput, password: passwordInput, disabled}} = this;
 
         return(
         <div className ="LoginContent">
-                <div className="loginInputBox">
+                <div className="loginInputBox" onChange={updateInput}>
                     <img 
                         className="instaLogo" 
                         alt ='logoImage' 
                         src="../images/sanghunlee/logo_text.png" 
                     />
                     <input
-                        value ={idInput} 
+                        value ={usernameInput} 
+                        name="username"
                         type="text" 
                         placeholder="Phone number, username, or email"
-                        onChange ={updateId} 
                     />
                     <input 
-                        value = {pwInput}
+                        value = {passwordInput}
+                        name="password"
                         type="text" 
                         placeholder="Password"
-                        onChange ={updatePw} 
                     />
                     <button 
                         className="loginBtn"
