@@ -1,5 +1,6 @@
 import { withRouter,Link } from 'react-router-dom';
 import React, { Component } from 'react';
+import Live from '../Live/Live';
 import Reply from '../Feeds/ReplyLike/Reply';
 import Like from '../Feeds/MainLike/Like';
 import "./Feeds.scss";
@@ -40,7 +41,9 @@ class Feeds extends Component {
                 <div className="mainContainer">
                     <div className="feeds">
                         <div className="feedsContent">
-                            <div className="feedsContentLive"></div>
+                            <div className="feedsContentLive">
+                                <Live />
+                            </div>
                         </div>
                         <article>
                             <div className="contentMainContainer">
@@ -65,7 +68,7 @@ class Feeds extends Component {
                                 <div className="contentMainText">
                                     <div className="mainTextIcon">
                                         <span className="mainIcon">
-                                            <Like></Like>
+                                            <Like />
                                         </span>
                                         <span className="mainIcon">
                                             <button className="comment" type="button">
