@@ -10,6 +10,8 @@ import './Components/Story.scss'
 import './Components/Aside.scss'
 
 class Main extends Component {
+
+
     render() {
         return (
         <main className ="Main">
@@ -17,8 +19,6 @@ class Main extends Component {
             <section className="feeds">
               <article>
               <Story />
-                <Feed />
-                <Feed />
                 <Feed />
               </article>
               <Aside />

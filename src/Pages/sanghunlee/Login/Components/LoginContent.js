@@ -15,7 +15,6 @@ class LoginContent extends React.Component{
     }
 
     LoginButton =()=>{
-
         fetch("http://10.58.0.127:8000/user/login", {
             method: "POST",
             body: JSON.stringify({
@@ -24,7 +23,10 @@ class LoginContent extends React.Component{
             })
         })
         .then(res => res.json()) 
-        .then(res => console.log(res))
+        .then(res => this.setState({token: res}))
+
+        
+        this.props.history.push("/sanghunleeMain")
     };
 
     updateId =(e)=>{
@@ -46,8 +48,8 @@ class LoginContent extends React.Component{
         })
 
     }
-
     render(){
+        const {LoginButton, updateId, updatePw, state: {id : idInput, pw: pwInput, disabled}} = this;
 
         return(
         <div className ="LoginContent">
@@ -58,21 +60,21 @@ class LoginContent extends React.Component{
                         src="../images/sanghunlee/logo_text.png" 
                     />
                     <input
-                        value ={this.state.id} 
+                        value ={idInput} 
                         type="text" 
                         placeholder="Phone number, username, or email"
-                        onChange ={this.updateId} 
+                        onChange ={updateId} 
                     />
                     <input 
-                        value = {this.state.pw}
+                        value = {pwInput}
                         type="text" 
                         placeholder="Password"
-                        onChange ={this.updatePw} 
+                        onChange ={updatePw} 
                     />
                     <button 
                         className="loginBtn"
-                        onClick = {this.LoginButton} 
-                        disabled={this.state.disabled}
+                        onClick = {LoginButton} 
+                        disabled={disabled}
                     >
                         Log In
                     </button>

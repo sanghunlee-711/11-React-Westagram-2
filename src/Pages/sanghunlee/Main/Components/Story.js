@@ -6,11 +6,20 @@ class Story extends Component {
     constructor() {
       super()
       this.state  = {
-        imagemock : require('./Mockdata/stroyData.json')
+        // imagemock : require('./Mockdata/stroyData.json')
+        imagemock : []
       } 
     }
     
+    componentDidMount = () =>{
+      fetch('http://localhost:3000/data/data.json')
+      .then(res => res.json())
+      .then(res => {this.setState({imagemock: res.story})})
+      console.log(this.state.imagemock)
+    }
+    
     render() {
+      console.log(this.state.imagemock)
         return (
             <div className="Story">
                 <ul>
