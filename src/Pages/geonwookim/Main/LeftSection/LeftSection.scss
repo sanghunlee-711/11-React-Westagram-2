@@ -1,5 +1,10 @@
-.LeftSection{
-  .feed{
+.LeftSection {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .feed {
     width: 616px;
     height: 918px;
     margin-right: 28px;
@@ -7,35 +12,35 @@
     background-color: white;
   }
 
-  .feed_header_container{
+  .feed_header_container {
     display: flex;
     width: 100%;
     height: 60px;
   }
 
-  .feed_header_gui_container{
+  .feed_header_gui_container {
     display: flex;
     align-items: center;
     padding: 16px;
   }
 
-  .feed_header_gui_container img{
+  .feed_header_gui_container img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
   }
 
-  .feed_header_id_text{
+  .feed_header_id_text {
     width: 450px;
     margin-left: 14px;
     cursor: pointer;
   }
 
-  .feed_see_more_details_container{
+  .feed_see_more_details_container {
     padding: 8px;
   }
 
-  .see_more_deatils_btn{
+  .see_more_deatils_btn {
     width: 40px;
     height: 40px;
     padding: 8px;
@@ -45,28 +50,27 @@
     background-color: white;
   }
 
-  .see_more_deatils_btn img{
+  .see_more_deatils_btn img {
     width: 16px;
     height: 16px;
   }
 
-
-  .feed_img{
+  .feed_img {
     width: 100%;
     height: 614px;
   }
 
-  .feed_img img{
+  .feed_img img {
     width: 100%;
     height: 100%;
   }
 
-  .like_share_comment_container{
+  .like_share_comment_container {
     width: 100%;
     height: 242px;
   }
 
-  .like_share_Section{
+  .like_share_Section {
     display: flex;
     width: 100%;
     height: 40px;
@@ -75,11 +79,11 @@
     background-color: white;
   }
 
-  .like_share_icon{
+  .like_share_icon {
     display: flex;
   }
 
-  .like_share_icon button{
+  .like_share_icon button {
     width: 40px;
     height: 40px;
     padding: 0;
@@ -89,17 +93,17 @@
     background-color: white;
   }
 
-  .like_share_icon img{
+  .like_share_icon img {
     width: 24px;
     height: 24px;
   }
 
-  .like_share_blank_space{
+  .like_share_blank_space {
     width: 500px;
     height: 40px;
   }
 
-  .book_mark{
+  .book_mark {
     width: 40px;
     height: 40px;
     border: none;
@@ -108,12 +112,12 @@
     background-color: white;
   }
 
-  .book_mark img{
+  .book_mark img {
     width: 24px;
     height: 24px;
   }
 
-  .like_count{
+  .like_count {
     display: flex;
     align-items: center;
     height: 18px;
@@ -123,16 +127,16 @@
     background-color: white;
   }
 
-  .like_count_btn{
+  .like_count_btn {
     width: 80px;
     height: 18px;
     padding: 0;
     font-size: 14px;
     border: none;
-    background-color:white;
+    background-color: white;
   }
 
-  .comment_section{
+  .comment_section {
     width: 100%;
     height: 88px;
     padding: 0 25px;
@@ -140,37 +144,37 @@
     background-color: white;
   }
 
-  .comment_section_my_text{
+  .comment_section_my_text {
     height: 18px;
     margin-bottom: 4px;
     font-size: 14px;
   }
 
-  .comment_section_my_text a{
+  .comment_section_my_text a {
     font-weight: 600;
   }
 
-  .comment_section_my_text button{
+  .comment_section_my_text button {
     height: 18px;
     outline: none;
     cursor: pointer;
     border: none;
-    color:#8E8E8E;
+    color: #8e8e8e;
     background-color: white;
   }
 
-  .comment_section_user_text{
+  .comment_section_user_text {
     font-size: 14px;
   }
-  .comment_section_user_text li{
+  .comment_section_user_text li {
     margin-bottom: 4px;
   }
 
-  .comment_section_user_text li a{
+  .comment_section_user_text li a {
     font-weight: 600;
   }
 
-  .upload_time{
+  .upload_time {
     width: 100%;
     height: 20px;
     font-size: 10px;
@@ -178,22 +182,22 @@
     align-items: center;
   }
 
-  .input_comment_section{
+  .input_comment_section {
     display: flex;
     align-items: center;
     width: 100%;
     height: 56px;
     margin: 4px 0 0;
     padding: 0 16px;
-    border-top:1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
     background-color: white;
   }
 
-  .input_comment_section_container{
+  .input_comment_section_container {
     margin: 0 auto;
   }
 
-  .input_area{
+  .input_area {
     width: 541px;
     height: 18px;
     padding: 0;
@@ -203,10 +207,10 @@
     outline: none;
   }
 
-  .upload_btn{
+  .upload_btn {
     height: 18px;
     border: none;
-    opacity: .3;
+    opacity: 0.3;
     font-weight: 600;
     cursor: pointer;
     background-color: white;
