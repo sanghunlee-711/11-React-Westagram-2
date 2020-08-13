@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../.././Components/Nav/Nav'
-import AsideSection from './AsideSection/AsideSection';
 import LeftSection from './LeftSection/LeftSection';
+import AsideSection from './AsideSection/AsideSection';
 import './Main.scss';
 
 class Main extends Component {
@@ -9,8 +9,8 @@ class Main extends Component {
         return (
             <div className="Main">
                 <Nav/>
-                <main class="total_contents">
-                <div class="total_contents_container">
+                <main className="total_contents">
+                <div className="total_contents_container">
                 <LeftSection/>
                 <AsideSection/>
                 </div>
@@ -19,5 +19,4 @@ class Main extends Component {
         );
     }
 }
-
 export default Main;

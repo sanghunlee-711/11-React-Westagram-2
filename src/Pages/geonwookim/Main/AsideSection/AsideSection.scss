@@ -1,95 +1,98 @@
-.AsideSection{
-  .profile_section{
+.AsideSection {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .profile_section {
     width: 293px;
     height: 500px;
     margin-right: 245px;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
   }
 
-  .profile_section_header{
+  .profile_section_header {
     display: flex;
     align-items: center;
   }
 
-  .profile_pic img{
+  .profile_pic img {
     width: 56px;
     height: 56px;
     margin-top: 4px;
     border-radius: 50%;
   }
 
-  .profile_section_my_id_container{
+  .profile_section_my_id_container {
     margin-left: 20px;
   }
 
-  .my_id{
+  .my_id {
     font-size: 14px;
   }
-  .my_info{
+  .my_info {
     font-size: 12px;
   }
-  /*추천 스토리*/
-  .recommend_story{
+
+  .recommend_story {
     width: 325px;
     height: 291px;
     margin: 0 0 12px -16px;
     padding: 4px 16px;
     overflow: hidden;
     border: 1px solid #dbdbdb;
-    background-color: rgb(250,250,250);
+    background-color: rgb(250, 250, 250);
   }
 
-  .recommend_story_header{
+  .recommend_story_header {
     display: flex;
     justify-content: space-between;
     padding: 4px 16px;
-
   }
 
-  .recommend_story_header a{ 
+  .recommend_story_header a {
     font-weight: 600;
     font-size: 14px;
     color: #8e8e8e;
     font-weight: 600;
   }
 
-  .recommend_profile_list{
+  .recommend_profile_list {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
-  .recommend_profile_pic{
+  .recommend_profile_pic {
     padding: 8px;
   }
 
-  .recommend_profile_pic img{
+  .recommend_profile_pic img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
   }
-  .info_text{
+  .info_text {
     font-size: 14px;
     font-weight: 600;
     color: #8e8e8e;
   }
 
-  .recommend_profile_info{
+  .recommend_profile_info {
     width: 219.88px;
     height: 48px;
     padding-bottom: 8px;
   }
 
-  .profile_Id{
+  .profile_Id {
     font-size: 14px;
   }
 
-  /* 스토리 모두보기 */
-  .activity_time{
+  .activity_time {
     font-size: 12px;
   }
 
-  .follow_btn{
+  .follow_btn {
     font-size: 12px;
     width: 50px;
     height: 18px;
@@ -98,51 +101,51 @@
     color: #0095f6;
   }
 
-  .recommend_profile_list button{
+  .recommend_profile_list button {
     border: none;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
   }
 
-  .recommend_head{
+  .recommend_head {
     width: 325px;
     height: 191px;
     margin: 0 0 12px -16px;
     padding: 4px 16px;
     overflow: hidden;
     border: 1px solid #dbdbdb;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
   }
 
-  .insta_info_container{
+  .insta_info_container {
     width: 100%;
     height: 106px;
-    background-color:#FAFAFA;
+    background-color: #fafafa;
   }
 
-  .insta_info{
+  .insta_info {
     width: 100%;
     height: 39px;
     margin-bottom: 16px;
-    background-color:#FAFAFA;
+    background-color: #fafafa;
   }
 
-  .insta_info li{
+  .insta_info li {
     font-size: 12px;
     list-style: none;
     float: left;
     margin-left: 2.75px;
   }
 
-  .insta_info ul{
+  .insta_info ul {
     padding: 0;
     margin: 0 0 3px;
   }
 
-  .insta_info li a{
+  .insta_info li a {
     color: #c7c7c7;
   }
 
-  .insta_company_info{
+  .insta_company_info {
     font-size: 11px;
     color: #c7c7c7;
   }
