@@ -23,14 +23,10 @@
         flex-direction: column;
         font-size: 12px;
 
-        
         div {
             border: 1px solid #C62F90;
             border-radius: 100%;
             padding: 2px;
-            border: 1px solid #C62F90;
-            border-radius: 100%;
-            padding: 2px
         }
 
         span {
@@ -40,10 +36,6 @@
             width: 80px;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-top: 5px;
-            text-overflow: ellipsis;
-            width: 80px;
-            overflow: hidden;
             text-align: center;
         }
     }
