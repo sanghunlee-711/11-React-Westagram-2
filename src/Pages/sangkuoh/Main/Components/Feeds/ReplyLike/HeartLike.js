@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class HeartLike extends Component {
   render() {
     return (

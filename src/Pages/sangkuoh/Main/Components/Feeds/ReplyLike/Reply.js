@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import NormalLike from './NormalLike';
 import HeartLike from './HeartLike';
 
-
 class Reply extends Component {
   constructor(props){
     super(props);

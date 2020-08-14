@@ -1,3 +1,4 @@
+@import '../../../Styles/common.scss';
 
 .Login{
     a {
@@ -14,6 +15,7 @@
         justify-content: space-between;
         width: 100%;
     }
+
     body {
         display: flex;
         flex-direction: column;
@@ -32,9 +34,7 @@
     }
 
     article {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include center;
         width: 100%;
         max-width: 935px;
         margin: 10px 0 44px -6px;
@@ -123,9 +123,7 @@
     }
 
     .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         height: 30px;
         margin: 8px 40px;
         outline: none;
@@ -153,10 +151,10 @@
     }
 
     .loginBoxOrLine {
-    background-color: #dbdbdb;
-    height: 1px;
-    width: 100%;
-    top: .45em;
+        background-color: #dbdbdb;
+        height: 1px;
+        width: 100%;
+        top: .45em;
     }
 
     .loginBoxOrText {
@@ -170,9 +168,7 @@
     }
 
     .loginBoxFb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include center;
         height: 38px;
         border: none;
         background:none;
@@ -199,9 +195,7 @@
     }
 
     .loginBoxPw {
-        display: flex;
-        justify-content: center;
-        text-align: center;
+        @include center;
         font-size: 1.2rem;
         line-height: 14px;
         margin-top: 12px;
@@ -209,9 +203,7 @@
     }
 
     .signUp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         width: 100%;
         height: 63px;
         margin: 0 0 10px;
@@ -252,6 +244,7 @@
     .appApple {
         background: url(/images/sangkuoh/main-appStore.png)no-repeat center / 100%;
     }
+    
     .appGoogle {
         background: url(/images/sangkuoh/main-googleStore.png)no-repeat center / 100%;
     }
