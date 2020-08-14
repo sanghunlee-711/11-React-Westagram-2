@@ -1,10 +1,11 @@
-.Login {
-  * {
-    box-sizing: border-box;
-  }
+@import "../../../Styles/common.scss";
+@import "../../../Styles/reset.scss";
+$login-container-gray: #dbdbdb;
+$background-gray: #fafafa;
 
+.Login {
   body {
-    background-color: #fafafa;
+    background-color: $background-gray;
   }
 
   a {
@@ -19,10 +20,11 @@
     align-items: center;
     width: 350px;
     height: 380px;
-    background-color: #ffffff;
-    border: 1px solid #dbdbdb;
-    padding: 10px, 0;
+    background-color: white;
+    border: 1px solid $login-container-gray;
+    padding: 10px 0px;
     margin: 0 auto;
+    margin-top: 100px;
 
     .login_input_container {
       display: flex;
@@ -34,7 +36,7 @@
       margin-bottom: 7px;
       font-size: 14px;
       border-radius: 3px;
-      border: 1px solid #dbdbdb;
+      border: 1px solid $login-container-gray;
     }
 
     input::placeholder {

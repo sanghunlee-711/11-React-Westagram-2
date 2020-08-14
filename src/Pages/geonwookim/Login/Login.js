@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.scss';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
  constructor(props){
@@ -8,11 +9,11 @@ class Login extends Component {
       id: '',
       password: '',
       message:'',
-      button: 'disabled',
+      button: false,
     };
   }
   
-  handleId =(e)=>{
+  handleId=(e)=>{
     this.setState({id: e.target.value});
   }
   
@@ -21,39 +22,49 @@ class Login extends Component {
   }
   
   goToMain=()=>{
-      fetch("http://10.58.4.79:8000/users/login", {
-        method: "POST",
-        body: JSON.stringify({
-          email: this.state.id,
-          password: this.state.password,
-        })
-      })
-      .then(res => res.json())
-      .then(res => console.log(res))
-      .catch(this.props.history.push('/geonwookimMain')
-      )};
-  
+    this.props.history.push('/geonwookimMain')
+  }
+
   render(){ 
-    const buttonActive = this.state.id.includes("@") && this.state.password.length > 4 ? "buttonActive": "buttonInactive";
-    const buttonDisabled = this.state.id.includes("@") && this.state.password.length > 4 ? false : true;
+    const isValid = this.state.id.includes("@") && this.state.password.length > 4; 
 
-    return(
+    return (
       <div className="Login">
-      <body>
-        <div className="login_container">
-          <div>
-            <img alt="인스타그램 텍스트 디자인 로고" src="images/sangkuoh/logo_text.png"/>
+        <body>
+          <div className="login_container">
+            <div>
+              <img
+                alt="인스타그램 텍스트 디자인 로고"
+                src="images/sangkuoh/logo_text.png"
+              />
+            </div>
+            <div className="login_input_container">
+              <input
+                className="input_id"
+                onChange={this.handleId}
+                type="text"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+              />
+              <input
+                className="password"
+                onChange={this.handlePassword}
+                type="password"
+                placeholder="비밀번호"
+              />
+              <button
+                className={isValid ? "buttonActive" : "buttonInactive"}
+                onClick={this.goToMain}
+                disabled={!isValid}
+              >
+                로그인
+              </button>
+            </div>
+            <Link to="#">
+              <div className="paswordForgot">비밀번호를 잊으셨나요?</div>
+            </Link>
           </div>
-          <div className="login_input_container">
-          <input className="input_id" onChange={this.handleId} type="text" placeholder="전화번호, 사용자 이름 또는 이메일"/>
-          <input className="password" onChange={this.handlePassword} type="password" placeholder="비밀번호"/>
-          <button className={buttonActive} onClick={this.goToMain} disabled={buttonDisabled}>로그인</button>
-          </div>
-        <div className="paswordForgot"><a href="#">비밀번호를 잊으셨나요?</a></div>
-        </div>
-      </body>
+        </body>
       </div>
-
     );
   }
 }

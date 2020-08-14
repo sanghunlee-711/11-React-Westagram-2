@@ -1,15 +1,7 @@
 @import "../../../Styles/common.scss";
+@import "../../../Styles/reset.scss";
 
 .Main {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  ul {
-    padding: 0;
-  }
-
   .total_contents {
     width: 100%;
     height: 927px;
