@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../../Components/Nav/Nav'
 import Story from './Components/Story'
-import Feed from './Components/Feed';
+import Feeds from './Components/Feeds';
 import Aside from './Components/Aside';
 import './Main.scss'
 import './Components/Feed.scss'
@@ -19,7 +19,7 @@ class Main extends Component {
             <section className="feeds">
               <article>
               <Story />
-                <Feed />
+                <Feeds />
               </article>
               <Aside />
             </section>

@@ -52,14 +52,14 @@ class Feed extends Component {
     
     render() {
         return (
-          this.state.feedData.map(({name, headersrc, likenum, postImg, feedComment})=> <section className="Feed">
+        <section className="Feed">
           <header>
             <div className="feedHeaderName">
               <img 
                 alt="Posting Name"
-                src={headersrc}
+                src={this.props.headersrc}
               />
-              <p>{name}</p>
+              <p>{this.props.name}</p>
             </div>
             <div className="feedHeaderbutton">
               <div></div>
@@ -70,7 +70,7 @@ class Feed extends Component {
           <div className="feedContentImg">
             <img 
               alt="Posting" 
-              src={postImg}
+              src={this.props.postImg}
             />
           </div>
           <section className="feedButtons">
@@ -116,10 +116,10 @@ class Feed extends Component {
                 <div className="feedComment" id="addComment">
                   <div>
                     <span>
-                      {name}
+                      {this.props.name}
                     </span>
                     <span className= "feedAddedComment">
-                      {feedComment}
+                      {this.props.feedComment}
                     </span>
                   </div>
                 </div>
@@ -149,7 +149,6 @@ class Feed extends Component {
           </div>
         </section>)
                 
-        );
     }
 }
 
