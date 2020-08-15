@@ -18,9 +18,8 @@ class Feeds extends Component {
         .then(res => res.json())
         .then(res => {
             this.setState({
-                comments: res.comment,
-                feedData: res.Feed,
-                addComment: res.addComment,
+                    comments: res.comment,
+                    feedData: res.Feed
                 })
             })
         }
@@ -28,7 +27,7 @@ class Feeds extends Component {
     render() {
         return (
             <div>
-                {this.state.feedData.map(({name, headersrc, likenum, postImg, feedComment, addComment})=> <Feed name ={name} headersrc ={headersrc} likenum ={likenum} postImg = {postImg} feedComment ={feedComment} addComment ={addComment}/>)}
+                {this.state.feedData.map(({name, headersrc, likenum, postImg, feedComment})=> <Feed name ={name} headersrc ={headersrc} likenum ={likenum} postImg = {postImg} feedComment ={feedComment}/>)}
             </div>
         );
     }

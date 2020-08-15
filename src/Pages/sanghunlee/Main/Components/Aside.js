@@ -32,22 +32,22 @@ class Aside extends Component {
                     <a href="https://google.com">See All</a>
                   </div>
                   <div className="sideBarSuggestionsPeople">
-                  {this.state.sideBarData.map(({name, alt, src, address}) => 
-                    <div className="sideBarSuggestionsPerson">
-                        <div className="SuggestionsPersonPicture">
-                          <img 
-                            alt={alt}
-                            src={src}
-                          />
-                          <div className="SuggestionsPersonName">
-                            <span>{name}</span>
-                            <span>Follows you</span>
+                    {this.state.sideBarData.map(({name, alt, src, address}) => 
+                      <div className="sideBarSuggestionsPerson">
+                          <div className="SuggestionsPersonPicture">
+                            <img 
+                              alt={alt}
+                              src={src}
+                            />
+                            <div className="SuggestionsPersonName">
+                              <span>{name}</span>
+                              <span>Follows you</span>
+                            </div>
                           </div>
+                          <Link to = {address}>Follow</Link>
                         </div>
-                        <Link to = {address}>Follow</Link>
-                      </div>
-                      )}
-                  </div>
+                        )}
+                    </div>
                   <div className="sideBarBottom">
                     <ul>
                       <li>About</li>
